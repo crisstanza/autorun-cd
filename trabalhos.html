@@ -35,6 +35,8 @@
 			<br />
 			<div id="pesquisar">
 				<form id="form-search" onsubmit="return false">
+					<input type="hidden" name="page" value="1" />
+					<input type="hidden" name="pageSize" value="10000" />
 					Palavras-chave: <input name="keywords" type="text" class="search" /> <input class="bt" type="submit" value="pesquisar trabalhos cient&iacute;ficos" />
 				</form>
 			</div>
@@ -51,6 +53,13 @@
 						<td><a href="./docs/1.docx" target="_blank">baixar</a></td>
 					</tr>
 				</table>
+				<div id="paginador" class="Hide">
+					<a title="anterior" href="#">&lt;&nbsp;</a>
+						<a class="Bold" href="#">&nbsp;1&nbsp;</a>
+						<a href="#">&nbsp;2&nbsp;</a>
+						<a href="#">&nbsp;3&nbsp;</a>
+					<a title="pr&oacute;xima" href="#">&nbsp;&gt;</a>
+				</div>
 				<div id="no-result" class="Hide">Nenhum resultado encontrado.</div>
 			</div>
 		<div>
