@@ -11,7 +11,7 @@
 				var length = table.rows.length;
 				var row = table.insertRow(length);
 				var trabalho = result[i];
-				row.insertCell(0).innerHTML = trabalho._e.replace(new RegExp(keywords, 'gi'), '<b>$&</b>');
+				row.insertCell(0).innerHTML = (i+1) + ') ' + trabalho._e.replace(new RegExp(keywords, 'gi'), '<b>$&</b>');
 				var titleTmp = [];
 				if ( trabalho._a != '' ) {
 					titleTmp.push('\xC1rea: ' + trabalho._a);
@@ -21,6 +21,7 @@
 				}
 				row.cells[0].setAttribute('title', titleTmp.join('\n'));
 				row.insertCell(1).innerHTML = trabalho._d.replace(new RegExp(keywords, 'gi'), '<b>$&</b>');
+				row.cells[1].setAttribute('title', titleTmp.join('\n'));
 				row.insertCell(2).innerHTML = '<a href="./docs/' + trabalho._b + '.docx" target="_blank">baixar</a>';
 			}
 			DOMUtils.swapClass(table, 'Hide', 'Show');
@@ -39,12 +40,17 @@
 		return result;
 	}
 
-	function doSearch(keywords) {
+	function paginate(resultFull, page, pageSize) {
+		return resultFull.slice(pageSize * (page - 1), pageSize);
+	}
+
+	function doSearch(keywords, page, pageSize) {
 		var pesquisarResult = document.getElementById('pesquisar-result');
 		var tableResult = document.getElementById('table-result');
-		var result = filter(MainIndex.trabalhos, keywords);
+		var resultFull = filter(MainIndex.trabalhos, keywords);
+		var resultPaged = paginate(resultFull, page, pageSize);
 		DOMUtils.truncTable(tableResult, 1);
-		appendResult(tableResult, result, keywords);
+		appendResult(tableResult, resultPaged, keywords);
 		DOMUtils.swapClass(pesquisarResult, 'Hide', 'Show');
 	}
 
@@ -52,7 +58,9 @@
 		var formSearch = document.getElementById('form-search');
 		formSearch.addEventListener('submit', function() {
 			var keywords = formSearch.keywords.value;
-			doSearch(keywords);
+			var page = formSearch.page.value;
+			var pageSize = formSearch.pageSize.value;
+			doSearch(keywords, page, pageSize);
 		}, false);
 	}
 

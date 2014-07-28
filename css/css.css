@@ -8,6 +8,9 @@
 .Show {
 	display: unset;
 }
+.Bold {
+	font-weight: bold;
+}
 
 body {
 	margin: 0;
@@ -219,4 +222,10 @@ a:hover {
 	float: left;
 	color: #00a650;
 	font-size: 9pt;
+}
+
+#paginador {
+	padding-top: 15px;
+	width: 600px;
+	text-align: center;
 }
