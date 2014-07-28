@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="css/css.css"></style>
 		<script src="js/main-index.js"></script>
 		<script src="js/dom-utils.js"></script>
+		<script src="js/trabalhos.js"></script>
 	</head>
 	<body>
 <!-- body -->
@@ -32,26 +33,25 @@
 			<br />
 
 			<br />
-			<div id="promocao">
-				Promo&ccedil;&atilde;o<br />
-				<br />
-				<a href="#"><img src="./img/promocao-01.png" /></a>
+			<div id="pesquisar">
+				<form id="form-search" onsubmit="return false">
+					Palavras-chave: <input name="keywords" type="text" class="search" /> <input class="bt" type="submit" value="pesquisar trabalhos cient&iacute;ficos" />
+				</form>
 			</div>
-			<div id="realizacao">
-				Realiza&ccedil;&atilde;o<br />
-				<br />
-				<a href="#"><img src="./img/realizacao-01.png" /></a>
-				<a href="#"><img src="./img/realizacao-02.png" /></a>
-				<a href="#"><img src="./img/realizacao-03.png" /></a>
+			<div id="pesquisar-result" class="Hide">
+				<table id="table-result">
+					<tr>
+						<th class="col1">autor</th>
+						<th class="col2">resumo</th>
+						<th>&nbsp;</th>
+					</tr>
+					<tr>
+						<td>Lorem Ipsum</td>
+						<td>Lorem Ipsum dolor sit amet. Ipsum dolor sit amet. Ipsum dolor sit amet. Ipsum dolor sit amet. Ipsum dolor sit amet...</td>
+						<td><a href="./docs/1.docx" target="_blank">baixar</a></td>
+					</tr>
+				</table>
 			</div>
-			<br />
-
-			<br />
-			<div id="patrocinadores">Patrocinadores</div>
-			<br />
-
-			<br />
-			<div id="apoio">Apoio</div>
 		<div>
 
 <!-- /body -->
