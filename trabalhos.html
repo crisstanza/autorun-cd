@@ -5,13 +5,13 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/css.css"></style>
 		<script src="js/js.js"></script>
-		<script src="js/index.js"></script>
+		<script src="js/dom-utils.js"></script>
+		<script src="js/trabalhos.js"></script>
 	</head>
 	<body>
 <!-- body -->
 
 		<div id="main">
-			<div id="left"></div>
 			<div id="logo">
 				<div id="logo-text">
 					2014 - Salvador/BA<br />
@@ -34,9 +34,28 @@
 
 			<br />
 			<div id="pesquisar">
-				<form>
-					Palavras-chave: <input type="text" class="search" /> <input class="bt" type="submit" value="pesquisar trabalhos cient&iacute;ficos" />
+				<form id="form-search" onsubmit="return false">
+					Palavras-chave: <input name="keywords" type="text" class="search" /> <input class="bt" type="submit" value="pesquisar trabalhos cient&iacute;ficos" />
 				</form>
+			</div>
+			<div id="pesquisar-result" class="Hide">
+				<table>
+					<tr>
+						<th class="col1">autor</th>
+						<th class="col2">resumo</th>
+						<th>&nbsp;</th>
+					</tr>
+					<tr>
+						<td>Lorem Ipsum</td>
+						<td>Lorem Ipsum dolor sit amet. Ipsum dolor sit amet. Ipsum dolor sit amet. Ipsum dolor sit amet. Ipsum dolor sit amet...</td>
+						<td><a href="#">baixar</a>
+					</tr>
+					<tr>
+						<td>Lorem Ipsum</td>
+						<td>Lorem Ipsum dolor sit amet. Ipsum dolor sit amsdsd.</td>
+						<td><a href="#">baixar</a>
+					</tr>
+				</table>
 			</div>
 		<div>
 
