@@ -40,3 +40,11 @@ DOMUtils.removeClass = function(element, className) {
 		element.setAttribute('class', newClassNames);
 	}
 };
+
+DOMUtils.truncTable = function(table, newSize) {
+	var length = table.rows.length;
+	while(length > newSize) {
+		table.deleteRow(length - 1);
+		length = table.rows.length;
+	}
+};
