@@ -1,6 +1,10 @@
+._div {
+	border: 1px dotted gray;
+}
+
 body {
 	margin: 0;
-	padding: 40px;
+	padding: 30px;
 	background-color: #FFFFFF;
 	font-family: Arial;
 }
@@ -18,7 +22,7 @@ a:hover {
 	width: 640px;
 	height: 480px;
 	border: 1px solid #cbeedc;
-	padding-right: 40px;
+	padding-right: 20px;
 }
 
 #left {
@@ -29,10 +33,99 @@ a:hover {
 	background-repeat: repeat-y;
 }
 
+#logo {
+	float: left;
+	width: 80px;
+	height: 55px;
+	background-image: url(../img/logo-abms.png);
+	margin-top: 50px;
+}
+
 #title {
+	float: left;
 	text-align: right;
 	font-size: 21pt;
 	font-weight: bold;
 	color: #00a650;
 	padding-top: 20px;
+	width: 500px;
+	height: 150px;
+}
+
+#link-trabalhos {
+	text-align: center;
+	float: left;
+	width: 200px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #d1d3d4;
+	border: 1px solid #a2a2a3;
+	border-radius: 5px;
+	color: #605f60;
+	font-size: 10pt;
+	margin-right: 40px;
+}
+
+#link-comissao {
+	text-align: center;
+	float: left;
+	width: 200px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #d1d3d4;
+	border: 1px solid #a2a2a3;
+	border-radius: 5px;
+	color: #605f60;
+	font-size: 10pt;
+}
+
+#promocao {
+	float: left;
+	color: #00a650;
+	font-size: 9pt;
+	width: 230px;
+	height: 16px;
+	border-bottom: 2px solid #a9e0c3;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+#realizacao {
+	float: left;
+	color: #00a650;
+	font-size: 9pt;
+	width: 335px;
+	height: 16px;
+	border-bottom: 2px solid #a9e0c3;	
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+#patrocinadores {
+	float: left;
+	color: #00a650;
+	font-size: 9pt;
+	width: 585px;
+	height: 16px;
+	border-bottom: 2px solid #a9e0c3;	
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+#apoio {
+	float: left;
+	color: #00a650;
+	font-size: 9pt;
+	width: 585px;
+	height: 16px;
+	border-bottom: 2px solid #a9e0c3;	
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+#links {
+	float: left;
+	padding-left: 80px;
+	padding-bottom: 40px;
 }
