@@ -4,9 +4,9 @@
 		<title>Congresso Nacional de Milho e Sorgo - 2014</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/css.css"></style>
-		<script src="js/main-index.js"></script>
-		<script src="js/dom-utils.js"></script>
-		<script src="js/trabalhos.js"></script>
+		<script src="js/main-index.js?vs=1"></script>
+		<script src="js/dom-utils.js?vs=1"></script>
+		<script src="js/trabalhos.js?vs=1"></script>
 	</head>
 	<body>
 <!-- body -->
@@ -44,6 +44,7 @@
 			<br />
 			<div id="pesquisar">
 				<form id="form-search" onsubmit="return false">
+					<input type="hidden" name="tipo" value="P" />
 					<input type="hidden" name="page" value="1" />
 					<input type="hidden" name="pageSize" value="10000" />
 					Palavras-chave: <input name="keywords" type="text" class="search" /> <input class="bt" type="submit" value="pesquisar resumos das palestras" />
@@ -52,8 +53,8 @@
 			<div id="pesquisar-result" class="Hide">
 				<table id="table-result">
 					<tr>
-						<th class="col1">autor</th>
-						<th class="col2">t&iacute;tulo</th>
+						<th class="col2">autor</th>
+						<th class="col1">t&iacute;tulo</th>
 						<th>&nbsp;</th>
 					</tr>
 					<tr>
