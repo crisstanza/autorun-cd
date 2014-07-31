@@ -1,4 +1,4 @@
-._div {
+_.div {
 	border: 1px dotted gray;
 }
 
@@ -41,7 +41,7 @@ a:hover {
 
 #logo {
 	float: left;
-	width: 120px;
+	width: 130px;
 	height: 55px;
 	background-image: url(../img/logo-abms.png);
 	margin-top: 50px;
@@ -52,28 +52,40 @@ a:hover {
 #logo-text {
 	text-align: center;
 	padding-top: 62px;
-	font-size: 7pt;
+	font-size: 8pt;
+	color: red;
+}
+
+#logo-text a {
+	color: #000000;
 }
 
 #title {
-	float: left;
-	text-align: right;
-	font-size: 21pt;
-	font-weight: bold;
-	color: #00a650;
+	float: right;
+	text-align: center;
 	padding-top: 20px;
-	width: 510px;
-	height: 140px;
+	height: 150px;
 }
 
 #title a {
 	color: #00a650;
 }
 
+#title .title {
+	font-size: 21pt;
+	font-weight: bold;
+	color: #00a650;
+}
+
+#title .sub-title {
+	font-size: 12pt;
+	color: #000000;
+}
+
 #link-trabalhos {
 	text-align: center;
 	float: left;
-	width: 200px;
+	width: 170px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	background-color: #d1d3d4;
@@ -81,13 +93,42 @@ a:hover {
 	border-radius: 5px;
 	color: #605f60;
 	font-size: 10pt;
-	margin-right: 40px;
+	margin-right: 15px;
 }
 
 #link-comissao {
 	text-align: center;
 	float: left;
-	width: 200px;
+	width: 170px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #d1d3d4;
+	border: 1px solid #a2a2a3;
+	border-radius: 5px;
+	color: #605f60;
+	font-size: 10pt;
+	margin-right: 15px;
+}
+
+#link-palestras {
+	text-align: center;
+	float: left;
+	width: 170px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #d1d3d4;
+	border: 1px solid #a2a2a3;
+	border-radius: 5px;
+	color: #605f60;
+	font-size: 10pt;
+	margin-right: 15px;
+}
+
+#link-abms {
+	text-align: center;
+	float: left;
+	width: 60px;
+	margin-top: 7px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	background-color: #d1d3d4;
@@ -159,8 +200,8 @@ a:hover {
 
 #links {
 	float: left;
-	padding-left: 100px;
-	padding-bottom: 40px;
+	padding-left: 5px;
+	padding-bottom: 30px;
 }
 
 #pesquisar {
@@ -169,6 +210,10 @@ a:hover {
 	font-size: 9pt;
 	padding-left: 120px;
 	width: 500px;
+}
+
+#conteudo-img {
+	padding-top: 150px;
 }
 
 .bt {

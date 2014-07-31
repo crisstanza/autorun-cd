@@ -11,29 +11,26 @@
 				var length = table.rows.length;
 				var row = table.insertRow(length);
 				var trabalho = result[i];
-				row.insertCell(0).innerHTML = (i+1) + ') ' + trabalho._e.replace(new RegExp(keywords, 'gi'), '<b>$&</b>');
+				row.insertCell(0).innerHTML = (i+1) + ') ' + trabalho._d.replace(new RegExp(keywords, 'gi'), '<b>$&</b>');
 				var titleTmp = [];
-				if ( trabalho._a != '' ) {
-					titleTmp.push('\xC1rea: ' + trabalho._a);
-				}
-				if ( trabalho._f != '' ) {
-					titleTmp.push('Co-autores: ' + trabalho._f);
+				if ( trabalho._e != '' ) {
+					titleTmp.push('Co-autores: ' + trabalho._e);
 				}
 				row.cells[0].setAttribute('title', titleTmp.join('\n'));
-				row.insertCell(1).innerHTML = trabalho._d.replace(new RegExp(keywords, 'gi'), '<b>$&</b>');
+				row.insertCell(1).innerHTML = trabalho._c.replace(new RegExp(keywords, 'gi'), '<b>$&</b>');
 				row.cells[1].setAttribute('title', titleTmp.join('\n'));
-				row.insertCell(2).innerHTML = '<a href="./docs/' + trabalho._b + '.docx" target="_blank">baixar</a>';
+				row.insertCell(2).innerHTML = '<a href="./docs/' + trabalho._b + '" target="_blank">baixar</a>';
 			}
 			DOMUtils.swapClass(table, 'Hide', 'Show');
 		}
 	}
 
-	function filter(trabalhos, keywords) {
+	function filter(trabalhos, keywords, tipo) {
 		var result = [];
 		for(var i = 0 ; i < trabalhos.length ; i++ ) {
 			var trabalho = trabalhos[i];
-			var indexEntry = (trabalho._d + ' ' + trabalho._e + ' ' + trabalho._f).toLowerCase()
-			if(indexEntry.indexOf(keywords.toLowerCase()) >= 0) {
+			var indexEntry = (trabalho._c + ' ' + trabalho._d + ' ' + trabalho._e).toLowerCase()
+			if(trabalho._a == tipo && indexEntry.indexOf(keywords.toLowerCase()) >= 0) {
 				result.push(trabalho);
 			}
 		}
@@ -44,10 +41,10 @@
 		return resultFull.slice(pageSize * (page - 1), pageSize);
 	}
 
-	function doSearch(keywords, page, pageSize) {
+	function doSearch(keywords, page, pageSize, tipo) {
 		var pesquisarResult = document.getElementById('pesquisar-result');
 		var tableResult = document.getElementById('table-result');
-		var resultFull = filter(MainIndex.trabalhos, keywords);
+		var resultFull = filter(MainIndex.trabalhos, keywords, tipo);
 		var resultPaged = paginate(resultFull, page, pageSize);
 		DOMUtils.truncTable(tableResult, 1);
 		appendResult(tableResult, resultPaged, keywords);
@@ -60,7 +57,8 @@
 			var keywords = formSearch.keywords.value;
 			var page = formSearch.page.value;
 			var pageSize = formSearch.pageSize.value;
-			doSearch(keywords, page, pageSize);
+			var tipo = formSearch.tipo.value;
+			doSearch(keywords, page, pageSize, tipo);
 		}, false);
 	}
 
